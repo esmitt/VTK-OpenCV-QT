@@ -18,7 +18,7 @@ public:
 
 private:
     Ui::MainView *ui;
-    CAppManager* m_appManager;
+    std::unique_ptr<CAppManager> m_appManager;  //manager class
 };
 
 #endif // MAINVIEW_H

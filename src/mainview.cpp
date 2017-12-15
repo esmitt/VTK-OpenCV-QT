@@ -6,12 +6,10 @@ MainView::MainView(QWidget *parent) :
     ui(new Ui::MainView)
 {
     ui->setupUi(this);
-    m_appManager = new CAppManager(ui->m_qvtkWidget, ui->m_openCVWidget);
+    m_appManager.reset(new CAppManager(ui->m_qvtkWidget, ui->m_openCVWidget));
 }
 
 MainView::~MainView()
 {
     delete ui;
-    if (m_appManager)
-      delete m_appManager;
 }
