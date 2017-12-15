@@ -15,11 +15,13 @@ include(${VTK_USE_FILE})
 # assuming QT5 in
 set(CMAKE_AUTOMOC ON)	##replace the qt5_wrap_cpp
 
+include_directories("include/")
+include_directories("src/")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${OpenCV_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR})
  
 file(GLOB UI_FILES *.ui)
-file(GLOB HEADERS *.h)
-file(GLOB SOURCES *.cpp)
+file(GLOB HEADERS include/*.h)
+file(GLOB SOURCES src/*.cpp)
 
 qt5_wrap_ui(UISrcs ${UI_FILES} )
 

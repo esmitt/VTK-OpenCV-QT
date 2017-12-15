@@ -51,6 +51,13 @@ public:
     cv::Mat matImage(windowSize[0], windowSize[1], CV_8UC3, imageData->GetScalarPointer()); // 8 bits x unsigned char x 3 channels
     cv::cvtColor(matImage, matImage, cv::COLOR_BGR2RGB);    // change from BGR --> RGB
     cv::flip(matImage, matImage, cv::ROTATE_90_CLOCKWISE);  // original image is turn down
+    
+    //erosion processing
+    int erosion_size = 6;
+    cv::Mat element = getStructuringElement(cv::MORPH_CROSS,
+      cv::Size(2 * erosion_size + 1, 2 * erosion_size + 1),
+      cv::Point(erosion_size, erosion_size));
+    cv::erode(matImage, matImage, element);
 
     m_pOpenCVViewer->showImage(matImage);
 
@@ -107,7 +114,7 @@ CAppManager::CAppManager(QVTKWidget* pVTKWidget, CQtOpenCVViewerGl* pOpenCVViewe
   renderWindow = m_pVTKWidget->GetRenderWindow();
   m_pVTKWidget->GetRenderWindow()->AddRenderer(renderer);
 
-  m_pVTKWidget->GetInteractor()->CreateRepeatingTimer(500);  //100 milliseconds
+  m_pVTKWidget->GetInteractor()->CreateRepeatingTimer(30);  //30 milliseconds / 30 FPS
 
   m_pOpenCVViewer = pOpenCVViewer;
 

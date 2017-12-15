@@ -6,46 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>821</width>
-    <height>535</height>
+    <width>840</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainView</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="horizontalLayoutWidget">
+   <widget class="CQtOpenCVViewerGl" name="m_openCVWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>10</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QVTKWidget" name="m_qvtkWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
-      <width>801</width>
-      <height>329</height>
+      <y>10</y>
+      <width>400</width>
+      <height>400</height>
      </rect>
-    </property>
-    <layout class="QHBoxLayout" name="viewerLayout">
-     <property name="spacing">
-      <number>6</number>
-     </property>
-     <item>
-      <widget class="QVTKWidget" name="m_qvtkWidget"/>
-     </item>
-     <item>
-      <widget class="CQtOpenCVViewerGl" name="m_openCVWidget" native="true"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>400</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
     </property>
    </widget>
   </widget>
@@ -54,7 +40,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>821</width>
+     <width>840</width>
      <height>21</height>
     </rect>
    </property>

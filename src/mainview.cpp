@@ -6,10 +6,7 @@ MainView::MainView(QWidget *parent) :
     ui(new Ui::MainView)
 {
     ui->setupUi(this);
-    cv::Mat image = cv::imread("small.png");
-    ui->m_openCVWidget->showImage(image);
-    //m_appManager = new CAppManager(ui->m_qvtkWidget, ui->m_openCVWidget);
-    m_appManager = nullptr;
+    m_appManager = new CAppManager(ui->m_qvtkWidget, ui->m_openCVWidget);
 }
 
 MainView::~MainView()
