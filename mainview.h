@@ -2,6 +2,7 @@
 #define MAINVIEW_H
 
 #include <QMainWindow>
+#include <appmanager.h>
 
 namespace Ui {
 class MainView;
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::MainView *ui;
+    CAppManager* m_appManager;
 };
 
 #endif // MAINVIEW_H

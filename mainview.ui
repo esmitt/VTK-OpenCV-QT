@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>821</width>
-    <height>401</height>
+    <height>535</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,12 +28,25 @@
       <number>6</number>
      </property>
      <item>
-      <widget class="QVTKWidget" name="m_qvtkWidget" native="true"/>
+      <widget class="QVTKWidget" name="m_qvtkWidget"/>
      </item>
      <item>
       <widget class="CQtOpenCVViewerGl" name="m_openCVWidget" native="true"/>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>400</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
